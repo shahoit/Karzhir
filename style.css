@@ -1,0 +1,123 @@
+.wallcounter{
+  overflow: hidden;
+  background: black;
+  color: white;
+  padding: 80px;
+  padding-top: 70px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.wrapper{
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.fields{
+  display: flex;
+  flex: 1;
+  margin-right: 10px;
+  position: relative; /* To position :after psuedo element */
+  justify-content: center;
+  align-items: center;
+}
+
+.fields:last-of-type{
+  margin-right: 0;
+}
+
+.fields > div{
+  flex: 1;
+  text-align: center;
+  margin-right: 1px;
+  background: red;
+  font: bold 78px Arial;
+  font: bold 10vw Arial;
+}
+
+.fields:after{ /* psuedo element */
+  position: absolute;
+  content: 'Days';
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  top: 100%;
+  margin-top: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.fields:nth-of-type(2):after{
+  content: 'Hours'
+}
+
+.fields:nth-of-type(3):after{
+  content: 'Minutes'
+}
+
+.fields:nth-of-type(4):after{
+  content: 'Secsonds'
+}
+
+#tagline1, #tagline2{
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  z-index: 1000;
+  color: white;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 2vw;
+}
+
+#tagline1{
+  bottom: auto;
+  top: 5px;
+  color: gray;
+}
+
+#tagline1 a{
+  color: gray;
+}
+
+#tagline2{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+
+@media screen and (max-width:580px){
+
+	.wallcounter{
+	  padding: 35px;
+	  padding-top: 15px;
+	}
+
+
+	.fields:nth-of-type(1):after{
+	  content: 'Day'
+	}
+	  
+	.fields:nth-of-type(2):after{
+	  content: 'Hr'
+	}
+	
+	.fields:nth-of-type(3):after{
+	  content: 'Min'
+	}
+	
+	.fields:nth-of-type(4):after{
+	  content: 'Sec'
+	}
+}
